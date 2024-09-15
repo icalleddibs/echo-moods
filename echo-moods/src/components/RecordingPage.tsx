@@ -1,3 +1,5 @@
+// Recording Page
+
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { transcribeVideo, startCountdown, startRecording, stopRecording } from './videoUtils';
@@ -11,7 +13,7 @@ const RecordingPage: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   
-  // State management
+  // Setup Variables
   const [videoBlob, setVideoBlob] = useState<Blob | null>(null);
   const [transcription, setTranscription] = useState<string>('');
   const [emotion, setEmotion] = useState<string>('');
@@ -28,6 +30,7 @@ const RecordingPage: React.FC = () => {
     }
   }, [location.state]);
 
+  // Start and Stop recording
   const handleStartRecording = () => {
     startCountdown(setCountdown, startRecording, setRecording, videoRef, setVideoBlob, mediaRecorderRef);
   };
@@ -36,22 +39,23 @@ const RecordingPage: React.FC = () => {
     stopRecording(setRecording, setVideoBlob, mediaRecorderRef);
   };
 
-
+  // When called, execute transcription of sentence and detect emotion from facial features
+  // Send results to backend to compute Cohere feedback 
   const handleTranscribe = async () => {
     if (videoBlob) {
       try {
-        //transcribe video with symphonics API
+        // Transcribe video with symphonics API
         console.log('Transcribing video...');
         const result = await transcribeVideo(videoBlob);
         console.log('Transcription result:', result);
         setTranscription(result);
 
-        //analyze emotion
+        // Analyze emotion result
         const detectedEmotion = await processVideo(videoBlob);
         console.log('Detected emotion:', detectedEmotion);
         setEmotion(detectedEmotion);
 
-        //analyze with cohere
+        // Analyze with cohere
         const cohereResult = await fetch('http://localhost:3001/analyse', {
           method: 'POST',
           headers: {
@@ -59,7 +63,7 @@ const RecordingPage: React.FC = () => {
           },
           body: JSON.stringify({ transcription: result, emotion: detectedEmotion }),
         })
-        // analyzeWithCohere(result, detectedEmotion);
+        
         console.log('Cohere result:', cohereResult);
         setCohereFeedback(await cohereResult.text());
       } catch (error) {
