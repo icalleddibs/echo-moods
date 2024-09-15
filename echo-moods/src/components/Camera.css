@@ -1,0 +1,83 @@
+.camera-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box
+  }
+  
+  .webcam-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 540px;
+    margin-bottom: 20px;
+    border: 5px solid #fff; /* White border for framing */
+    border-radius: 10px;    /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  }
+  
+  .webcam {
+    width: 100%;
+    height: auto;
+  }
+  
+.custom-button1 {
+    font-size: 2rem;
+    padding: 7%;
+    margin: 5%;
+    color: #F4ECD6;
+    background-color: transparent;
+    border: 2px solid #F4ECD6;
+    border-radius: 30px;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .custom-button2 {
+    font-size: 2rem;
+    padding: 7%;
+    margin: 5%;
+    color: #F4ECD6;
+    background-color: transparent;
+    border: 2px solid #F4ECD6;
+    border-radius: 30px;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s;
+      display: flex;
+  justify-content: center;
+  }
+.custom-button1:hover {
+    background-color: #88B7B5;
+    background-color: rgba(136, 183, 181, 0.3);
+}
+.custom-button2:hover {
+  background-color: #88B7B5;
+  background-color: rgba(132, 121, 150, 0.5);
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+  .video-preview {
+    text-align: center;
+    width: 100%;
+    max-width: 540px;
+  }
+  
+  .video {
+    width: 100%;
+    max-height: 400px;
+  }
+  

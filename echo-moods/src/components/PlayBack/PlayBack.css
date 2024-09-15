@@ -1,0 +1,11 @@
+.row-container {
+    justify-content: space-between;
+    gap: 20px;                      /* Space between containers */
+    padding: 20px;
+}
+.container-video, .leftimg, .rightimg {               
+    margin: 0 auto;                 /* Center if needed */
+}
+.container-video {
+    margin-top: 5px;
+}

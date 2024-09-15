@@ -1,0 +1,25 @@
+.row-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 0px;
+}
+h1 {
+    flex: 1;
+    font-size: 7rem !important;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 2%;
+    color: #F4ECD6;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5% !important;
+   white-space: nowrap;
+    border-radius: 30px;
+  }
+  .leftimg, .rightimg {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

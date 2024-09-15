@@ -1,0 +1,14 @@
+body {
+  background-image: url('./components/background.png');
+  background-position: top left;
+  font-family: Verdana !important;
+}
+
+.App {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
+  height: 100vh; /* Full viewport height */
+  margin: 0;
+}

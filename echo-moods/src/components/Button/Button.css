@@ -1,0 +1,22 @@
+.custom-button {
+    font-size: 3rem !important;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    color: #F4ECD6;
+    background-color: transparent;
+    border: 2px solid #F4ECD6;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+.custom-button:hover {
+    background-color: #88B7B5;
+    background-color: rgba(136, 183, 181, 0.3);
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

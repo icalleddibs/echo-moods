@@ -1,0 +1,13 @@
+p.cohere-feedback {
+  font-size: 2rem !important;
+  margin-top: 5px;
+  justify-content: left;
+  text-align: left;
+  padding: 2%;
+  color: #F4ECD6;
+  background-color: #847996;
+  margin-left: 15%;
+  margin-right: 15%;
+  border-radius: 30px;
+  box-shadow: 0 0px 25px rgba(167, 202, 177, 0.3);
+}

@@ -1,0 +1,11 @@
+h3{
+    font-size: 2rem !important;
+    margin-top: 2% !important;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #F4ECD6;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
