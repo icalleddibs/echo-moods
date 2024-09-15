@@ -1,4 +1,5 @@
 // source: https://justadudewhohacks.github.io/face-api.js/docs/index.html
+// Emotion recognition using Face-API
 
 import * as faceapi from 'face-api.js';
 
@@ -6,7 +7,7 @@ import * as faceapi from 'face-api.js';
 export const processVideo = async (videoBlob: Blob): Promise<string> => {
   if (!videoBlob) return '';
 
-  // Load models
+  // Load models: FaceDetector and ExpressionNet
   try {
     console.log('Loading models...');
     await Promise.all([
@@ -25,11 +26,12 @@ export const processVideo = async (videoBlob: Blob): Promise<string> => {
   videoElement.src = url;
   videoElement.play();
 
+  // Detect faces and determine expressions
   return new Promise<string>((resolve) => {
     videoElement.addEventListener('loadeddata', async () => {
       const detections = await faceapi.detectAllFaces(videoElement, new faceapi.TinyFaceDetectorOptions()).withFaceExpressions();
       if (detections.length > 0) {
-        // Get the first detected face's expressions
+        // Get the first detected face's expressions (expect one user)
         const expressions = detections[0].expressions;
         // Get the dominant emotion
         const dominantEmotion = expressions.asSortedArray()[0].expression;
@@ -37,7 +39,6 @@ export const processVideo = async (videoBlob: Blob): Promise<string> => {
       } else {
         resolve('No face detected');
       }
-      // Clean up
       URL.revokeObjectURL(url);  // Release the object URL to avoid memory leaks
     });
   });
