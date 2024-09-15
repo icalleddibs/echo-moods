@@ -16,7 +16,7 @@ const cohere = new CohereClient({
 
 const analyzeWithCohere = async (transcription, emotion) => {
   try {
-    // Construct the prompt based on the transcription and emotion
+    // Instruct Cohere with a prompt based on transcription and emotion
     const prompt = `Analyze the following transcribed speech with the context of the detected emotion "${emotion}". Address the person directly and consider their emotional state:\n"${transcription}. Limit your reponse to 4 sentences."`;
 
     // Make the API call to Cohere
@@ -27,7 +27,7 @@ const analyzeWithCohere = async (transcription, emotion) => {
       temperature: 0.7,
     });
 
-    // Return the analyzed feedback
+    // Return the analyzed feedback to the frontend
     return response.generations[0].text.trim();
   } catch (error) {
     console.error('Cohere API Error:', error);
