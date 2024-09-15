@@ -1,3 +1,5 @@
+// Supporting Video Process/Retrieval Functions
+
 import React from 'react';
 
 export const startCountdown = (
@@ -32,6 +34,7 @@ export const startRecording = async (
   mediaRecorderRef: React.MutableRefObject<MediaRecorder | null>
 ) => {
   try {
+    // Wait for a media stream and start recording if available
     const userMediaStream = await navigator.mediaDevices.getUserMedia({ video: true });
     videoRef.current!.srcObject = userMediaStream;
 
@@ -55,6 +58,7 @@ export const startRecording = async (
   }
 };
 
+// Save video out after completion
 export const stopRecording = (
   setRecording: React.Dispatch<React.SetStateAction<boolean>>,
   setVideoBlob: React.Dispatch<React.SetStateAction<Blob | null>>,
@@ -66,6 +70,7 @@ export const stopRecording = (
   }
 };
 
+// Transcription using Symphonic Labs API
 export const transcribeVideo = async (videoBlob: Blob): Promise<string> => {
   const formData = new FormData();
   formData.append('video', videoBlob, 'input.mp4');
