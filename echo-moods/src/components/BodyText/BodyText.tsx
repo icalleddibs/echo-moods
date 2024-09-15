@@ -1,3 +1,5 @@
+// Homepage Display Info
+
 import React from "react";
 import "./BodyText.css";
 const BodyText = () => {
