@@ -1,4 +1,4 @@
-// Video Playback file
+// Video Playback Display
 
 import React from 'react';
 
