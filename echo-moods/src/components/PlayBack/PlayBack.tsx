@@ -1,16 +1,4 @@
-/* import React from 'react';
-import "./PlayBack.css";
-const PlayBack = () => {
-  return (
-    <div className="container-video">
-      <video width="100%" controls>
-        <source src="cat.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  );
-};
-export default PlayBack; */
+// Video Playback file
 
 import React from 'react';
 
