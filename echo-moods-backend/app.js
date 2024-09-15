@@ -1,19 +1,17 @@
 
 import express from 'express';
-import cors from 'cors'; // Import the CORS package
+import cors from 'cors'; // Import the CORS package to allow POST requests
 import { CohereClient } from "cohere-ai";
 
-
-
 var app = express();
-app.use(cors()); // Enable CORS for all requests
+app.use(cors());
 app.use( express.json() );
 app.get('/', (req, res) => {
   res.send('module online')
 })
 
 const cohere = new CohereClient({
-  token: "mUgXA6I8UxytUq6kN16H8VJXDbQEELwR4Lz99Vxu",
+  token: process.env.REACT_APP_COHERE_API_KEY,
 });
 
 const analyzeWithCohere = async (transcription, emotion) => {
