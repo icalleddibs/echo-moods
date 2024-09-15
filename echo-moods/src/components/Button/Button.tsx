@@ -1,12 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';  // Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import './Button.css';
 
 const Button = () => {
-  const navigate = useNavigate();  // Initialize useNavigate
+  const navigate = useNavigate(); 
 
   const handleClick = () => {
-    navigate('/record');  // Navigate to the desired route
+    navigate('/record');  // Next derisred route from Homepage
   };
 
   return (
