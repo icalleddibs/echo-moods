@@ -1,3 +1,4 @@
+// Transcription and Emotion display
 
 import React from 'react';
 import './Transcription.css';
