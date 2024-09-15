@@ -1,4 +1,6 @@
-// src/HomePage.js
+/*
+Webpage Home Page
+*/
 
 import React from "react";
 import Button from "./Button/Button";
@@ -16,27 +18,3 @@ const HomePage: React.FC = () => {
 };
 
 export default HomePage;
-
-
-
-/* import React from 'react';
-import { useNavigate } from 'react-router-dom';
-
-function HomePage() {
-  const navigate = useNavigate();
-  const handleGetStarted = () => {
-    navigate('/personal-info');
-  };
-
-  return (
-    <div>
-      <h1>Welcome to Roommate Matching App</h1>
-      <p>This is the home page</p>
-      <button onClick={handleGetStarted}>Get Started</button>
-    </div>
-  );
-} 
-
-export default HomePage; */
-
-
