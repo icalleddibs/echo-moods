@@ -1,3 +1,5 @@
+// Homepage Logo Display
+
 import React from 'react';
 import "./Header.css";
 const Header = () => {
